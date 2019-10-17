@@ -3,7 +3,7 @@ const wxkey = require('./gzhkey');
 
 var token_api=`https://api.weixin.qq.com/cgi-bin/token`
 +`?grant_type=client_credential`
-+`&appid=${wxkey.appid}&secret=${wxkey.secret}`;
++`&appid=${wxkey.appid}&secret=${wxkey.appsecret}`;
 
 
 gohttp.get(token_api).then(d=>{

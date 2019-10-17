@@ -3,7 +3,7 @@ const wxkey = require('./gzhkey');
 
 var token_api=`https://api.weixin.qq.com/cgi-bin/token`
 +`?grant_type=client_credential`
-+`&appid=${wxkey.appid}&secret=${wxkey.secret}`;
++`&appid=${wxkey.appid}&secret=${wxkey.appsecret}`;
 
 var menu_data={
     button:[
@@ -11,6 +11,29 @@ var menu_data={
             name : "Linux",
             type : "view",
             url : "https://www.linux.org"
+        },
+        {
+            "name": "发图", 
+            "sub_button": [
+                {
+                    "type": "pic_sysphoto", 
+                    "name": "系统拍照发图", 
+                    "key": "rselfmenu_1_0", 
+                   "sub_button": [ ]
+                 }, 
+                {
+                    "type": "pic_photo_or_album", 
+                    "name": "拍照或者相册发图", 
+                    "key": "rselfmenu_1_1", 
+                    "sub_button": [ ]
+                }, 
+                {
+                    "type": "pic_weixin", 
+                    "name": "微信相册发图", 
+                    "key": "rselfmenu_1_2", 
+                    "sub_button": [ ]
+                }
+            ]
         },
         {
             name : "help",
